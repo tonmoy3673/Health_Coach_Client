@@ -7,6 +7,7 @@ import img4 from '../../images/cycle.jpg';
 import img5 from '../../images/sports.jpg';
 import './Home.css'
 import { Col, Row } from 'react-bootstrap';
+import Services from '../../Shared/Services/Services';
 
 
 
@@ -64,6 +65,10 @@ const Home = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+        </div>
+
+        <div>
+            <Services></Services>
         </div>
 
      <div className='container-fluid py-5'>
