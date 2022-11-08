@@ -9,9 +9,11 @@ const Header = () => {
     return (
         
               <div className='py-4 mb-4'>
-            <Navbar bg="light" expand="lg" className='py-3' fixed='top'>
+            <Navbar bg="white" expand="lg" className='py-3' fixed='top'>
       <Container>
-        <Navbar.Brand as={Link} to ={"/home"}><img src='' alt='logo' className='logo'></img></Navbar.Brand>
+        
+        <Navbar.Brand as={Link} to ={"/"}><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAzQdXJKtKVAjc1LztNEaA29R_vK5fZF18og&usqp=CAU' alt='logo' className='logo'></img> <span className='band fw-semibold'>Health <span className='text-secondary coach'>Coach</span></span></Navbar.Brand>
+       
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto menu">

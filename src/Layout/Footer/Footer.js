@@ -8,7 +8,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <div className='container-fluid text-center footer' fixed='bottom'>
+        <div className='container-fluid text-center footer pt-5' fixed='bottom'>
             <Row className='pt-3'>
                 
                 <Col lg='4' className='text-light py-1'>
