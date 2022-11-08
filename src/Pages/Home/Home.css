@@ -15,10 +15,15 @@
 .banner-text{
     font-size: 2rem;
     color: #2acd35;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 .about-text{
     color: #444;
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
 }
+/* .btn-banner{
+    background-color: #6ab04c !important;
+} */
