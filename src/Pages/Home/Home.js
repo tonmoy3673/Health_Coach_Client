@@ -7,12 +7,25 @@ import img4 from '../../images/cycle.jpg';
 import img5 from '../../images/sports.jpg';
 import './Home.css'
 import { Col, Row } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import Services from '../../Shared/Services/Services';
 
 
 
 
 const Home = () => {
-  
+
+  const [services,setServices]=useState([]);
+
+  useEffect(()=>{
+    fetch('http://localhost:5000/services')
+    .then(res=>res.json())
+    .then(data=>setServices(data))
+
+  },[]);
+
+
+
     return (
        <div className='py-5'>
          <div className='container-fluid py-3'>
@@ -68,10 +81,11 @@ const Home = () => {
     </Carousel>
         </div>
 
-        {/* <div>
-          //Services
-
-        </div> */}
+       <div>
+        {
+          services.map(service=><Services key={service._id} service={service}></Services>)
+        }
+       </div>
 
      <div className='container-fluid py-5'>
         <h3 className='text-center all-text py-2'>About Me</h3>

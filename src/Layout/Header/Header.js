@@ -38,8 +38,9 @@ const Header = () => {
                    <>
                    
                    
-                   <Button onClick={handleLogOut} className='btn1'>Logout</Button>
-                   
+                   <Button onClick={handleLogOut} className='btn1 me-2'>Logout</Button>
+                   <Button className='btn1 me-2'>My reviews</Button>
+                   <Button className='btn1'>Add service</Button>
                    </>
                   :
                   <>

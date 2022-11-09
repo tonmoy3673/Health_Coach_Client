@@ -1,14 +1,14 @@
 import React from 'react';
-// import { Button } from 'react-bootstrap';
-// import Card from 'react-bootstrap/Card';
-// import Col from 'react-bootstrap/Col';
+import { Button } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
 
 const Services = ({service}) => {
-    // const {title,image_url,price,rating}=service;
+    const {title,image_url,price,rating}=service;
     console.log(service);
     return (
         <div className='py-3'>
-           {/* <Col>
+           <Col>
            <Card className='rounded'>
         <Card.Img variant="top" src={image_url} className='bg-dark'/>
         <Card.Body>
@@ -22,7 +22,7 @@ const Services = ({service}) => {
        <Button className='btn1'>View Details</Button>
       </Card.Body>
     </Card>
-    </Col> */}
+    </Col>
         </div>
     );
 };
