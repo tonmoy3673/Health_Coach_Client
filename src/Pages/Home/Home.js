@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Carousel from 'react-bootstrap/Carousel';
 import img1 from '../../images/water.jpg';
 import img2 from '../../images/woman.jpg';
@@ -7,11 +7,12 @@ import img4 from '../../images/cycle.jpg';
 import img5 from '../../images/sports.jpg';
 import './Home.css'
 import { Col, Row } from 'react-bootstrap';
-import Services from '../../Shared/Services/Services';
+
 
 
 
 const Home = () => {
+  
     return (
        <div>
          <div className='container-fluid'>
@@ -67,9 +68,10 @@ const Home = () => {
     </Carousel>
         </div>
 
-        <div>
-            <Services></Services>
-        </div>
+        {/* <div>
+          //Services
+
+        </div> */}
 
      <div className='container-fluid py-5'>
         <h3 className='text-center banner-text py-2'>About Me</h3>
