@@ -14,8 +14,8 @@ import { Col, Row } from 'react-bootstrap';
 const Home = () => {
   
     return (
-       <div>
-         <div className='container-fluid'>
+       <div className='py-5'>
+         <div className='container-fluid py-3'>
             
             <Carousel >
       <Carousel.Item>

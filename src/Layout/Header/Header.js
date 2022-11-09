@@ -1,15 +1,23 @@
-import React from 'react';
-import { Button, Container} from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Button, Container, Image} from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './Header.css';
 import { Link } from 'react-router-dom';
+import { context } from '../../Context/AuthContext/AuthContext';
+import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
+  const {user,logOut}=useContext(context);
+  const handleLogOut=()=>{
+    logOut()
+    .then(()=>{})
+    .catch(error=>console.error(error));
+  }
     return (
         
-              <div className='py-4 mb-4'>
-            <Navbar bg="white" expand="lg" className='py-3' fixed='top'>
+              <div className='mb-4'>
+            <Navbar bg="white" expand="lg" fixed='top'>
       <Container>
         
         <Navbar.Brand as={Link} to ={"/"}><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAzQdXJKtKVAjc1LztNEaA29R_vK5fZF18og&usqp=CAU' alt='logo' className='logo'></img> <span className='band fw-semibold'>Health <span className='text-secondary coach'>Coach</span></span></Navbar.Brand>
@@ -25,15 +33,31 @@ const Header = () => {
           <Nav>
             <Nav.Link href="#deets">
              
-                <>
-                <Link to='/login'><Button variant="" className=' fw-semibold me-1 btn1'>Login</Button></Link>
-                
-                <Link to='/register'><Button variant="outline-success" className='fw-semibold btn2'>Register</Button></Link>
-                </>
+                {
+                   user?.uid ?
+                   <>
+                   
+                   
+                   <Button onClick={handleLogOut} className='btn1'>Logout</Button>
+                   
+                   </>
+                  :
+                  <>
+                  <Link to='/login'><Button variant="" className=' fw-semibold me-1 btn1'>Login</Button></Link>
+                  
+                  <Link to='/register'><Button variant="outline-success" className='fw-semibold btn2'>Register</Button></Link>
+                  </>
+                }
              
             
             </Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
+            {user?.photoURL ?
+              <Image title={user?.displayName} style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image>
+             
+
+              : <FaUser></FaUser>
+              }
             
             </Nav.Link>
           </Nav>
