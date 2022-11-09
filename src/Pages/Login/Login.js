@@ -63,7 +63,7 @@ const Login = () => {
 
     return (
         <div className='py-5 container'>
-            <h5 className='text-center all-text py-2 mt-3'>Please Login</h5>
+            <h5 className='text-center all-text pt-5'>Please Login</h5>
             
             <Form.Text >
           <h5 className="text-danger text-center mx-auto fw-bold">{error}</h5>

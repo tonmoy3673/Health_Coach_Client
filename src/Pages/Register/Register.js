@@ -45,11 +45,11 @@ const Register = () => {
 
     return (
         <div className='py-5 container'>
-            <h5 className='text-center fw-semibold all-text pt-3'>Registration Form</h5>
+            <h5 className='text-center fw-semibold all-text pt-5'>Registration Form</h5>
             <Form.Text >
           <h5 className="text-danger text-center mx-auto fw-bold">{error}</h5>
         </Form.Text>
-            <Row xs={1} md={2} className='align-item-center py-3'>
+            <Row xs={1} md={2} className='align-item-center py-2'>
                 <Col lg='6'>
 
                 <Lottie animationData={lottie} loop={true}></Lottie>
