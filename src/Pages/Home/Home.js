@@ -39,7 +39,7 @@ const Home = () => {
        <div className='banner-img'>
        <img
           className="d-block w-100"
-          src={img2} alt='img' />
+          src={img5} alt='img' />
        </div>
 
         <Carousel.Caption>
@@ -74,7 +74,7 @@ const Home = () => {
         </div> */}
 
      <div className='container-fluid py-5'>
-        <h3 className='text-center banner-text py-2'>About Me</h3>
+        <h3 className='text-center all-text py-2'>About Me</h3>
         <Row xs={1} md={2} className='justify-space-between align-item-center text-center py-3'>
                 <Col lg='6'>
                     <img src='https://images.pexels.com/photos/4662356/pexels-photo-4662356.jpeg?auto=compress&cs=tinysrgb&w=600' alt='' className='img-fluid rounded-2'/>
@@ -95,7 +95,7 @@ const Home = () => {
      </div>
         
        <div className='gallery container py-5'>
-            <h1 className='banner-text text-center py-3'>My Gallery</h1>
+            <h1 className='all-text text-center py-3'>My Gallery</h1>
             <Row>
                 <Col lg='4'>
                     <img src={img1} alt='gallery' className='img-fluid rounded-2' data-bs-toggle='modal' data-bs-target='#exampleModal'/>

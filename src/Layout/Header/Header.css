@@ -42,6 +42,8 @@
 .btn1{
     background-color: #2acd35 !important; 
     color: #f2f2f2 !important;
+    outline: #2acd35 !important;
+    border: #2acd35 !important;
 
 }
 
@@ -51,6 +53,7 @@
 .btn2:hover{
     background-color: #2acd35 !important;
     outline:none;
+
 }
 .band{
    font-size: 22px;

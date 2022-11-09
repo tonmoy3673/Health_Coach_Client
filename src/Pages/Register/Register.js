@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import { context } from '../../Context/AuthContext/AuthContext';
+import Lottie from 'lottie-react';
+import lottie from '../Lottie/lottie.json';
 
 const Register = () => {
     const navigate=useNavigate();
@@ -42,18 +44,19 @@ const Register = () => {
     }
 
     return (
-        <div className='py-5'>
-            <h4 className='text-center banner-text pt-3 py-2'>Please Fill-up Registration Form</h4>
+        <div className='py-5 container'>
+            <h5 className='text-center fw-semibold all-text pt-3'>Registration Form</h5>
             <Form.Text >
           <h5 className="text-danger text-center mx-auto fw-bold">{error}</h5>
         </Form.Text>
-            <Row xs={1} md={2} className='justify-space-between align-item-center py-3'>
+            <Row xs={1} md={2} className='align-item-center py-3'>
                 <Col lg='6'>
-                    
+
+                <Lottie animationData={lottie} loop={true}></Lottie>
                 
                 </Col>
                 <Col lg='6'>
-                <Form onSubmit={handleForm} className='w-50 mx-auto login p-3'>
+                <Form onSubmit={handleForm} className='w-75 mx-auto login p-3'>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label className='text-secondary fw-semibold'>Your Full Name</Form.Label>
         <Form.Control type="text" name='name' placeholder="Enter email" />
@@ -75,7 +78,7 @@ const Register = () => {
         <Form.Control type="password" name='password' placeholder="Password" required />
       </Form.Group>
       
-      <Button variant="primary" type="submit" className='mb-3'>
+      <Button type="submit" className='mb-3 btn1 fw-semibold'>
        Register
       </Button>
       <p className='text-start'><small>Already have an account ? Please <Link to='/login'>Login</Link></small></p>
