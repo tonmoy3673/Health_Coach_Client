@@ -3,11 +3,11 @@ import { Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 
-const Services = ({service}) => {
+
+const Service = ({service}) => {
     const {title,image_url,price,rating}=service;
-    
     return (
-        <div className='py-3'>
+        <div>
            <Col>
            <Card className='rounded'>
         <Card.Img variant="top" src={image_url} className='bg-dark'/>
@@ -30,4 +30,4 @@ const Services = ({service}) => {
     );
 };
 
-export default Services;
+export default Service;

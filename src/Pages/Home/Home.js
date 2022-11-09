@@ -6,9 +6,11 @@ import img3 from '../../images/strong.jpg';
 import img4 from '../../images/cycle.jpg';
 import img5 from '../../images/sports.jpg';
 import './Home.css'
-import { Col, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import Services from '../../Shared/Services/Services';
+import { FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 
@@ -81,14 +83,26 @@ const Home = () => {
     </Carousel>
         </div>
 
-       <div>
+       <div className='container py-4'>
+        <h4 className='text-center all-text py-2'>Services </h4>
+        <Row xs={1} md={3} className="g-4">
         {
           services.map(service=><Services key={service._id} service={service}></Services>)
         }
+        
+        
+        </Row>
+        
+        <div className='text-center py-2'>
+       <Link to='/service'>
+       <Button className='btn1 fw-semibold'>Show All <FaArrowRight/></Button>
+       </Link>
+        </div>
+        
        </div>
-
-     <div className='container-fluid py-5'>
-        <h3 className='text-center all-text py-2'>About Me</h3>
+       
+     <div className='container-fluid py-3'>
+        <h3 className='text-center all-text py-4'>About Me</h3>
         <Row xs={1} md={2} className='justify-space-between align-item-center text-center py-3'>
                 <Col lg='6'>
                     <img src='https://images.pexels.com/photos/4662356/pexels-photo-4662356.jpeg?auto=compress&cs=tinysrgb&w=600' alt='' className='img-fluid rounded-2'/>
