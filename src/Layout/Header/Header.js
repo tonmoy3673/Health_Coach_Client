@@ -39,7 +39,9 @@ const Header = () => {
                    
                    
                    <Button onClick={handleLogOut} className='btn1 me-2'>Logout</Button>
+                   <Link to='/review'>
                    <Button className='btn1 me-2'>My reviews</Button>
+                   </Link>
                    <Button className='btn1'>Add service</Button>
                    </>
                   :

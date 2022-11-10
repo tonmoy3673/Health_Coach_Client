@@ -1,10 +1,13 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 import Service from '../Service/Service';
 
 
 const AllServices = () => {
+
+    useTitle('Services');
     const services=useLoaderData();
     return (
         <div className='py-5 container'>
@@ -14,6 +17,7 @@ const AllServices = () => {
         }
         </Row>
         </div>
+        
     );
 };
 

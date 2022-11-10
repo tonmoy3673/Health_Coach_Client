@@ -8,11 +8,13 @@ import { context } from '../../Context/AuthContext/AuthContext';
 import { FaGoogle ,FaGithub,FaMailBulk} from "react-icons/fa";
 import Lottie from 'lottie-react';
 import lottie from '../Lottie/lottie.json';
+import useTitle from '../../Hooks/useTitle';
 const Login = () => {
     const [error,setError]=useState('');
     const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
+  useTitle('Login')
 
   const {signIn,logInWithGoogle,signInWithGithub}=useContext(context);
     const handleForm=(event)=>{
@@ -20,7 +22,6 @@ const Login = () => {
         const form=event.target;
         const email=form.email.value;
         const password=form.password.value;
-        console.log(email,password);
         signIn(email,password)
         .then(result=>{
           const user=result.user;

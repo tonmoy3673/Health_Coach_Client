@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import Services from '../../Shared/Services/Services';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 
 
@@ -18,6 +19,8 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 
   const [services,setServices]=useState([]);
+
+  useTitle('Home')
 
   useEffect(()=>{
     fetch('http://localhost:5000/services')

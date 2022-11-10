@@ -6,11 +6,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { context } from '../../Context/AuthContext/AuthContext';
 import Lottie from 'lottie-react';
 import lottie from '../Lottie/lottie.json';
+import useTitle from '../../Hooks/useTitle';
 
 const Register = () => {
     const navigate=useNavigate();
     const {createUser,updateUserProfile}=useContext(context);
     const [error,setError]=useState('');
+    useTitle('Register')
     const handleForm=(event)=>{
         event.preventDefault();
         const form=event.target;

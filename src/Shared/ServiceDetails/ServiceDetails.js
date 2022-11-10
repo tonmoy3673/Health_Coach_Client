@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
@@ -6,10 +6,30 @@ import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 import './ServiceDetails.css';
 import { context } from '../../Context/AuthContext/AuthContext';
+import Modal from 'react-bootstrap/Modal';
+
+import Review from '../Review/Review';
+import useTitle from '../../Hooks/useTitle';
+
 
 const ServiceDetails = () => {
     const {title,image_url,price,rating,details,activities,role,_id}=useLoaderData();
     const {user}=useContext(context);
+    const [show, setShow] = useState(false);
+    
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+    useTitle('Service-Reviews')
+  const [reviews,setReviews]=useState([]);
+    useEffect(()=>{
+
+      fetch(`http://localhost:5000/review?serviceName=${title}`)
+      .then(res=>res.json())
+      .then(data=>setReviews(data))
+
+    },[])
+    
 
     const handleReview=event=>{
 
@@ -17,17 +37,19 @@ const ServiceDetails = () => {
         const form=event.target;
         const name=`${form.name.value}`;
         const email=user?.email || 'unregistered';
+        const photoURL=user?.photoURL || 'unregistered';
         const message=form.message.value;
         
 
         const review={
             service:_id,
+            photoURL:photoURL,
             serviceName:title,
             price,
             customer:name,
             email,
-          
             message
+
         }
 
         fetch('http://localhost:5000/review',{
@@ -42,7 +64,7 @@ const ServiceDetails = () => {
         .then(data=>{
             console.log(data)
             if (data.acknowledged) {
-                alert('Review has been posted successfully')
+               
                 form.reset();
             }
         })
@@ -53,7 +75,7 @@ const ServiceDetails = () => {
 
     return (
         <div className='py-5 container'>
-           <Col className='py-3'>
+           <Col className='py-4'>
            <Card className='rounded bg-light'>
         <Card.Img variant="top" src={image_url} className='bg-dark img-fluid'/>
         <Card.Body>
@@ -73,9 +95,7 @@ const ServiceDetails = () => {
          <span className='card-text fw-semibold'>Descriptions</span>: {details}
         </Card.Text>
            <div className='text-center'>
-           <Link to=''>
-           <Button className='btn1 text-white fw-semibold'>Add Review</Button>
-           </Link>
+           
            </div>
         
        
@@ -83,8 +103,13 @@ const ServiceDetails = () => {
     </Card>
     </Col>
 
+        <div className='py-4'>
+          
+       {
+        user?.uid?
+        <>
 
-    <Form onSubmit={handleReview} className='w-75 mx-auto py-4'>
+<Form onSubmit={handleReview} className='w-75 mx-auto py-4'>
       <div className='d-flex'>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Email</Form.Label>
@@ -99,14 +124,61 @@ const ServiceDetails = () => {
       </div>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Write a review</Form.Label>
-        <Form.Control as="textarea" name='message' rows={3} placeholder='Message...' />
+        <Form.Control as="textarea" name='message' rows={3} placeholder='Message...' required/>
         <div className='py-2'>
-        <Button type='submit' className='btn1 text-white fw-semibold'>Submit</Button>
+        <>
+      <Button type='submit' className='btn1 text-white fw-semibold' onClick={handleShow}>
+      Submit
+      </Button>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title className='banner-text'>Congratulations!!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        Review has been posted successfully
+        </Modal.Body>
+        <Modal.Footer>
+          <Button className='btn1' onClick={handleClose}>
+            Close
+          </Button>
+          
+        </Modal.Footer>
+      </Modal>
+    </>
+        
         </div>
       </Form.Group>
     </Form>
 
+        </>
 
+        :
+
+        <>
+          <Link to='/login'>
+           <Button className='btn1 text-white fw-semibold'>Add Review</Button>
+           </Link>
+        </>
+
+       }
+
+        </div>
+
+    
+
+      <div className='container'>
+
+      {
+        reviews?.map(review=><Review key={review._id} review={review}></Review>)  
+      }
+        
+      </div>
         </div>
     );
 };
