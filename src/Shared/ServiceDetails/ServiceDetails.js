@@ -28,7 +28,7 @@ const ServiceDetails = () => {
       .then(res=>res.json())
       .then(data=>setReviews(data))
 
-    },[])
+    },[title])
     
 
     const handleReview=event=>{

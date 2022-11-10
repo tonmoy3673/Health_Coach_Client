@@ -9,6 +9,7 @@ import { FaGoogle ,FaGithub,FaMailBulk} from "react-icons/fa";
 import Lottie from 'lottie-react';
 import lottie from '../Lottie/lottie.json';
 import useTitle from '../../Hooks/useTitle';
+import { toast } from "react-toastify";
 const Login = () => {
     const [error,setError]=useState('');
     const location = useLocation();
@@ -27,6 +28,7 @@ const Login = () => {
           const user=result.user;
           console.log('sign in', user)
           form.reset();
+          toast.success("Login Successfully Done");
           setError('');
           navigate(from, { replace: true });
         })
