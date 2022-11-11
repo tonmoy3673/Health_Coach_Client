@@ -23,7 +23,7 @@ const Home = () => {
   useTitle('Home')
 
   useEffect(()=>{
-    fetch('http://localhost:5000/services')
+    fetch('https://health-coach-server-self.vercel.app/services')
     .then(res=>res.json())
     .then(data=>setServices(data))
 

@@ -31,18 +31,22 @@ const Header = () => {
             
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">
+            <Nav href="#deets">
              
                 {
                    user?.uid ?
                    <>
                    
-                   
+                   <Link>
                    <Button onClick={handleLogOut} className='btn1 me-2'>Logout</Button>
+                   </Link>
+                   
                    <Link to='/review'>
                    <Button className='btn1 me-2'>My reviews</Button>
                    </Link>
+                   <Link to='/AddService'>
                    <Button className='btn1'>Add service</Button>
+                   </Link>
                    </>
                   :
                   <>
@@ -53,7 +57,7 @@ const Header = () => {
                 }
              
             
-            </Nav.Link>
+            </Nav>
             <Nav.Link eventKey={2} href="#memes">
             {user?.photoURL ?
               <Image title={user?.displayName} style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image>

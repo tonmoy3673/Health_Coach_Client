@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import Main from '../Main/Main';
+import AddService from '../Pages/AddService/AddService';
 import Blog from '../Pages/Blog/Blog';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
@@ -39,18 +40,25 @@ export const router=createBrowserRouter([
             },
             {
                 path:'/service',
-                loader:()=>fetch('http://localhost:5000/allServices'),
+                loader:()=>fetch('https://health-coach-server-self.vercel.app/allServices'),
                 element:<AllServices></AllServices>
             },
             {
                 path:'/service/:id',
                 element:<ServiceDetails></ServiceDetails>,
-                loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                loader:({params})=>fetch(`https://health-coach-server-self.vercel.app/services/${params.id}`)
             },
             {
                 path:'/review',
                 element:<PrivateRoutes>
                     <MyReview></MyReview>
+                </PrivateRoutes>
+            },
+            {
+                path:'/AddService',
+                element:<PrivateRoutes>
+                    <AddService>
+                        </AddService>
                 </PrivateRoutes>
             }
 

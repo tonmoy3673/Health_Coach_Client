@@ -24,7 +24,7 @@ const ServiceDetails = () => {
   const [reviews,setReviews]=useState([]);
     useEffect(()=>{
 
-      fetch(`http://localhost:5000/review?serviceName=${title}`)
+      fetch(`https://health-coach-server-self.vercel.app/review?serviceName=${title}`)
       .then(res=>res.json())
       .then(data=>setReviews(data))
 
@@ -52,7 +52,7 @@ const ServiceDetails = () => {
 
         }
 
-        fetch('http://localhost:5000/review',{
+        fetch('https://health-coach-server-self.vercel.app/review',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -104,11 +104,11 @@ const ServiceDetails = () => {
     </Col>
 
         <div className='py-4'>
-          
+        
        {
         user?.uid?
         <>
-
+          <h4 className='text-secondary text-center'> Please write your review here</h4>
 <Form onSubmit={handleReview} className='w-75 mx-auto py-4'>
       <div className='d-flex'>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -122,6 +122,7 @@ const ServiceDetails = () => {
       
 
       </div>
+          
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Write a review</Form.Label>
         <Form.Control as="textarea" name='message' rows={3} placeholder='Message...' required/>
@@ -173,7 +174,7 @@ const ServiceDetails = () => {
     
 
       <div className='container'>
-
+      <h4 className='all-text text-center py-3'> All Reviews</h4>
       {
         reviews?.map(review=><Review key={review._id} review={review}></Review>)  
       }

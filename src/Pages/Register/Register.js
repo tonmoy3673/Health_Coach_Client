@@ -61,12 +61,12 @@ const Register = () => {
                 <Form onSubmit={handleForm} className='w-75 mx-auto login p-3'>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label className='text-secondary fw-semibold'>Your Full Name</Form.Label>
-        <Form.Control type="text" name='name' placeholder="Enter email" />
+        <Form.Control type="text" name='name' placeholder="Enter name" required/>
         
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label className='text-secondary fw-semibold'>Your Photo URL</Form.Label>
-        <Form.Control type="text" name='photoURL' placeholder="Enter email" />
+        <Form.Control type="text" name='photoURL' placeholder="Your Photo URL Link" required/>
         
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">

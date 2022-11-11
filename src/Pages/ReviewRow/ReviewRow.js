@@ -9,11 +9,18 @@ const ReviewRow = ({reviewRow}) => {
     const [orderService,setOrderService]=useState([]);
     const {serviceName,price,customer,service,message,photoURL,_id}=reviewRow;
    
- 
+    const [reviews,setReviews]=useState([]);
+    useEffect(()=>{
+
+      fetch(`https://health-coach-server-self.vercel.app/review?`)
+      .then(res=>res.json())
+      .then(data=>setReviews(data))
+
+    },[])
    
   
         useEffect(()=>{
-            fetch(`http://localhost:5000/services/${service}`)
+            fetch(`https://health-coach-server-self.vercel.app/services/${service}`)
             .then(res=>res.json())
             .then (data=>setOrderService(data))
         },[service])
@@ -22,12 +29,18 @@ const ReviewRow = ({reviewRow}) => {
           const proceed=window.confirm('Are you sure, you want to delete this review')
 
           if(proceed){
-            fetch(`http://localhost:5000/services/${id}`,{
+            fetch(`https://health-coach-server-self.vercel.app/review/${id}`,{
               method:'DELETE'
             })
             .then(res=>res.json())
             .then(data=>{
-              console.log(data)
+              if (data.acknowledged===true) {
+                alert('Review has been deleted successfully')
+              const remaining=reviews.filter(rd=>rd._id!==id);
+              setReviews(remaining);
+              
+              }
+              console.log(data);
             })
           }
 
@@ -35,7 +48,9 @@ const ReviewRow = ({reviewRow}) => {
             
     return (
         <div className='pt-4'>
+          
             <Card className='mb-3'>
+              
         {   
             orderService?.image_url &&
             <Card.Img style={{ width: '10rem'}} variant="top" src={orderService?.image_url}/>
