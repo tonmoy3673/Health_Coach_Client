@@ -90,7 +90,7 @@ const Home = () => {
 
       <div className='container py-4'>
       <h4 className='text-center fw-semibold style-text me-5 pe-5'>What We Do</h4>
-        <h2 className='text-center all-text py-2 ms-5 ps-5'>Our Services </h2>
+        <h2 className='text-center all-text mb-3 ms-5 ps-5'>Our Services </h2>
         <Row xs={1} md={3} className="g-4">
           {
             services.map(service => <Services key={service._id} service={service}></Services>)
@@ -115,9 +115,12 @@ const Home = () => {
 
           <Col lg='6' >
             <div>
-            <h4 className='text-center fw-semibold style-text'>Some Story Behind Us</h4>
-        <h5 className='text-start py-3 about-text'>WE HAVE 20 YEARS OF EXPERIENCE</h5>
-              <p className='text-start'>We handpick the best coaches and health experts from across the country to make sure you get the mostpersonalized health care you deserve between those doctor visits.</p>
+            <h4 className='text-center fw-semibold style-text ps-5 ms-5'>Some Story Behind Us</h4>
+        <h5 className='text-start mb-3 about-text'>WE HAVE 20 YEARS OF EXPERIENCE</h5>
+              <p className='text-start'>We handpick the best coaches and health experts from across the country to make sure you get the mostpersonalized health care you deserve between those doctor visits.Our wealth of experience equips us with a deep understanding of various fitness methodologies, allowing us to create tailored programs that suit individual needs. We have successfully guided countless clients towards achieving their health and wellness goals.</p>
+              <p className='text-start'>
+              Through our 20 years of practice, we have developed a comprehensive approach that encompasses physical fitness, nutrition, and mental well-being. Our coaches and experts are well-versed in the latest research and advancements in the field, ensuring that our clients receive the most up-to-date and effective strategies.
+              </p>
             </div>
           </Col>
           <Col lg='6'>
@@ -132,8 +135,9 @@ const Home = () => {
 
           {/* ========= About me =========== */}
       <div className='container-fluid py-3'>
-        <h3 className='text-center all-text py-4'>About Me</h3>
-        <Row xs={1} md={2} className='justify-space-between align-item-center text-center py-3'>
+      <h4 className='text-center fw-semibold style-text pe-5 me-5'>Let's Introduce</h4>
+        <h3 className='text-center all-text mb-4 ms-4'>About Me</h3>
+        <Row xs={1} md={2} className='justify-space-between align-item-center text-center py-4'>
           <Col lg='6'>
             <img src='https://images.pexels.com/photos/4662356/pexels-photo-4662356.jpeg?auto=compress&cs=tinysrgb&w=600' alt='' className='img-fluid rounded-2' />
           </Col>
@@ -156,8 +160,9 @@ const Home = () => {
       {/* ========= My Gallery =========== */}
 
       <div className='gallery container py-5'>
-        <h1 className='all-text text-center py-3'>My Gallery</h1>
-        <Row>
+      <h4 className='text-center fw-semibold style-text pe-5 me-5'>Some Photos from</h4>
+        <h1 className='all-text text-center mb-3 ms-5'>My Gallery</h1>
+        <Row className='py-3'>
           <Col lg='4'>
             <img src={img1} alt='gallery' className='img-fluid rounded-2' data-bs-toggle='modal' data-bs-target='#exampleModal' />
           </Col>
