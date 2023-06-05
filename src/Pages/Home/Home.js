@@ -89,7 +89,8 @@ const Home = () => {
       </div>
 
       <div className='container py-4'>
-        <h4 className='text-center all-text py-2'>Services </h4>
+      <h4 className='text-center fw-semibold style-text me-5 pe-5'>What We Do</h4>
+        <h2 className='text-center all-text py-2 ms-5 ps-5'>Our Services </h2>
         <Row xs={1} md={3} className="g-4">
           {
             services.map(service => <Services key={service._id} service={service}></Services>)
@@ -105,6 +106,29 @@ const Home = () => {
         </div>
 
       </div>
+
+      {/* ======== intro ========== */}
+      <div className='container py-4'>
+      
+        <Row xs={1} md={2} className='justify-space-between align-items-center text-center py-3'>
+          
+
+          <Col lg='6' >
+            <div>
+            <h4 className='text-center fw-semibold style-text'>Some Story Behind Us</h4>
+        <h5 className='text-start py-3 about-text'>WE HAVE 20 YEARS OF EXPERIENCE</h5>
+              <p className='text-start'>We handpick the best coaches and health experts from across the country to make sure you get the mostpersonalized health care you deserve between those doctor visits.</p>
+            </div>
+          </Col>
+          <Col lg='6'>
+            <img src='https://i.ibb.co/FgKyQZ0/intro-image.png' alt='' className='img-fluid rounded-2' />
+          </Col>
+        </Row>
+
+
+
+      </div>
+
 
           {/* ========= About me =========== */}
       <div className='container-fluid py-3'>

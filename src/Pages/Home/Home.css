@@ -29,8 +29,13 @@
 } */
 
 .all-text{
-    font-size: 1.7rem;
+    font-size: 2.2rem;
     color: #888;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
+}
+
+.style-text{
+    font-family: 'Courgette', cursive;
+    color: #2acb35;
 }
