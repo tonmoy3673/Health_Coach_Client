@@ -4,7 +4,9 @@ import Col from 'react-bootstrap/Col';
 
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
-
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 const AllActivity = ({act}) => {
     const {img,info}=act;
    
@@ -23,6 +25,16 @@ const AllActivity = ({act}) => {
         <Card.Body>
         <Card.Title className='banner-text fw-semibold text-center'>{info}</Card.Title>
        
+      
+           <div className='text-center py-1'>
+            
+           <Link to='/service'>
+            <Button className='btn1 fw-semibold'>View Details <FaArrowRight /></Button>
+          </Link>
+
+          
+           
+           </div>
         
        
       </Card.Body>
