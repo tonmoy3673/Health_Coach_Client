@@ -188,6 +188,52 @@ const Home = () => {
         </Row>
       </div>
 
+          {/* =========== Our Mission & Vision=========== */}
+      <div className='container py-4'>
+      <h4 className='text-center fw-semibold style-text pe-5 me-5'>Lets Talk About </h4>
+          <h3 className='text-center all-text mb-4 ms-5'>Our Mission</h3>
+      <Row xs={1} md={2} className='justify-space-between align-items-center text-center py-3'>
+        
+
+        <Col lg='6' >
+          <div>
+         
+            <p className='text-start'>We aim to educate, inspire, and motivate our clients to make positive lifestyle changes that promote long-term health. Our mission is to create a nurturing environment where individuals feel empowered to take control of their physical, mental, and emotional well-being.</p>
+            <p className='text-start'>
+            Through our expertise and knowledge, we strive to help our clients set achievable goals, overcome obstacles, and cultivate healthy habits that last a lifetime. Our mission is to be a trusted partner in the pursuit of health, guiding individuals towards a happier, healthier, and more fulfilling life.
+            </p>
+          </div>
+        </Col>
+        <Col lg='6'>
+          <img src='https://i.ibb.co/t3X220X/Misson.jpg' alt='' className='img-fluid rounded-2' />
+        </Col>
+      </Row>
+
+
+
+    </div>
+    <div className='container py-4'>
+    <h4 className='text-center fw-semibold style-text pe-5 me-5'>Lets Talk About </h4>
+          <h3 className='text-center all-text mb-4 ms-5'>Our Vision</h3>
+      <Row xs={1} md={2} className='justify-space-between align-items-center text-center py-3'>
+      
+      <Col lg='6'>
+          <img src='https://i.ibb.co/NTb1rvp/vision.jpg' alt='' className='img-fluid rounded-2' />
+        </Col>
+        <Col lg='6' >
+          <div>
+          
+            <p className='text-start'>Our vision is to create a society where individuals are empowered with the knowledge and tools to make informed decisions about their health. We aim to inspire and guide others towards sustainable lifestyle choices that enhance physical, mental, and emotional well-being.Join us in embracing our vision and let us work together to create a healthier, more vibrant world where individuals thrive and flourish in every aspect of their lives.</p>
+            
+          </div>
+        </Col>
+        
+      </Row>
+
+
+
+    </div>
+{/* ============ End of main section ========== */}
     </div>
 
   );
