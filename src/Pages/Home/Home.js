@@ -12,6 +12,7 @@ import Services from '../../Shared/Services/Services';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import useTitle from '../../Hooks/useTitle';
+import Activity from '../../Shared/Activity/Activity';
 
 
 
@@ -188,7 +189,7 @@ const Home = () => {
         </Row>
       </div>
 
-          {/* =========== Our Mission & Vision=========== */}
+          {/* =========== Our Mission=========== */}
       <div className='container py-4'>
       <h4 className='text-center fw-semibold style-text pe-5 me-5'>Lets Talk About </h4>
           <h3 className='text-center all-text mb-4 ms-5'>Our Mission</h3>
@@ -212,6 +213,10 @@ const Home = () => {
 
 
     </div>
+
+        {/* =========Activity ============ */}
+        <Activity/>
+    {/* =========== Our Vision =========== */}
     <div className='container py-4'>
     <h4 className='text-center fw-semibold style-text pe-5 me-5'>Lets Talk About </h4>
           <h3 className='text-center all-text mb-4 ms-5'>Our Vision</h3>
