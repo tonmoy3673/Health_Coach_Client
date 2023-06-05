@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
-import { Button } from 'react-bootstrap';
+
 const AllActivity = ({act}) => {
     const {img,info}=act;
    
@@ -21,16 +21,8 @@ const AllActivity = ({act}) => {
           </PhotoProvider>
 
         <Card.Body>
-        <Card.Title className='banner-text fw-semibold'>{info}</Card.Title>
+        <Card.Title className='banner-text fw-semibold text-center'>{info}</Card.Title>
        
-      
-           <div className='text-center'>
-            
-            <Button className='btn1'>View Details</Button>
-
-          
-           
-           </div>
         
        
       </Card.Body>
