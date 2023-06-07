@@ -18,6 +18,7 @@ import Join from '../../Shared/Join/Join';
 
 
 
+
 const Home = () => {
 
   const [services, setServices] = useState([]);
@@ -240,7 +241,12 @@ const Home = () => {
 
 
     </div>
+
+    {/* ========= Join US + Company ========= */}
     <Join/>
+
+  
+ 
 {/* ============ End of main section ========== */}
     </div>
 

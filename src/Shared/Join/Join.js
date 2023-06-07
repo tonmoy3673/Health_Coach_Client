@@ -2,6 +2,7 @@ import React from 'react';
 import './Join.css';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Company from '../Company/Company';
 
 const Join = () => {
     return (
@@ -30,6 +31,10 @@ const Join = () => {
         </div>
         
           </div>
+
+          {/* ============ Company Section ========== */}
+
+          <Company/>
 
         {/* =========== Join US Form =========== */}
         <div className='row py-5 mt-3 rounded-2 d-flex justify-content-center align-items-center back'>
