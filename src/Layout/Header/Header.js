@@ -50,7 +50,7 @@ const Header = () => {
                    </>
                   :
                   <>
-                  <Link to='/login'><Button variant="" className=' fw-semibold me-1 btn1'>Login</Button></Link>
+                  <Link to='/login'><Button variant="" className=' fw-semibold me-1 btn1 mb-2'>Login</Button></Link>
                   
                   <Link to='/register'><Button variant="outline-success" className='fw-semibold btn2'>Register</Button></Link>
                   </>
