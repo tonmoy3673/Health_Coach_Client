@@ -13,7 +13,7 @@ const Footer = () => {
                 
                 <Col lg='4' className='text-light py-1'>
                 <h5 className='menu-bar'>About Us</h5>
-                I understand very well how lack of confidence can be an obstacle. That is why I dedicated myself to helping people overcome their fears and improve their looks - and their lives.
+                I understand very well how lack of confidence can be an obstacle. That is why I dedicated myself to helping people overcome their fears and improve their look and their lives.
                 </Col>
                 <Col lg='4' className='text-white py-1'>
                 <h5 className='menu-bar'> Quick Links</h5>
