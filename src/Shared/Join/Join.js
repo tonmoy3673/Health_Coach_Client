@@ -1,5 +1,7 @@
 import React from 'react';
 import './Join.css';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Join = () => {
     return (
@@ -30,15 +32,18 @@ const Join = () => {
           </div>
 
         {/* =========== Join US Form =========== */}
-        <div className='row py-5 rounded-2 d-flex justify-content-center align-items-center back'>
+        <div className='row py-5 mt-3 rounded-2 d-flex justify-content-center align-items-center back'>
         <div class="col-lg-6">
               <h2 class="fw-bold text-white">Ready to join?</h2>
               <p class="text-light">To enroll in, attend, and work toward the completion of this online course</p>
             </div>
             <div className='col-lg-4 text-center'>
-            <button type="button" class="btn btn-white bg-white fw-bold text-secondary">
+              <Link to={'/register'}>
+              <Button type="button" variant="outline-light btn-lg fw-semibold " class="btn ">
                     Join Us
-                  </button>
+                  </Button>
+              </Link>
+            
             </div>
 
         </div>
