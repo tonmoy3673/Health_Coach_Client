@@ -5,7 +5,7 @@ const Join = () => {
     return (
         <div className='container py-4'>
             
-            <div className="row text-center rounded-2">
+            <div className="row text-center rounded-2 pb-4 mb-2">
             <div className="col-4">
               
                 <h1 className="fw-bold join text-capitalize">1K+</h1>
@@ -36,7 +36,7 @@ const Join = () => {
               <p class="text-light">To enroll in, attend, and work toward the completion of this online course</p>
             </div>
             <div className='col-lg-4 text-center'>
-            <button type="button" class="btn btn-white bg-white fw-bold text-primary">
+            <button type="button" class="btn btn-white bg-white fw-bold text-secondary">
                     Join Us
                   </button>
             </div>
