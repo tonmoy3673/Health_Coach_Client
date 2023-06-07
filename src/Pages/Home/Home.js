@@ -225,7 +225,7 @@ const Home = () => {
       <Row xs={1} md={2} className='justify-space-between align-items-center text-center py-3'>
       
       <Col lg='6'>
-          <img src='https://i.ibb.co/NTb1rvp/vision.jpg' alt='' className='img-fluid rounded-2' />
+          <img src='https://i.ibb.co/NTb1rvp/vision.jpg' alt='' className='img-fluid rounded-2 mb-3' />
         </Col>
         <Col lg='6' >
           <div>
