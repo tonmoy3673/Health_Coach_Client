@@ -44,7 +44,7 @@ const Join = () => {
             </div>
             <div className='col-lg-4 text-center'>
               <Link to={'/register'}>
-              <Button type="button" variant="outline-light btn-lg fw-semibold " class="btn ">
+              <Button type="button" variant="outline-light btn-lg fw-semibold " className="btn ">
                     Join Us
                   </Button>
               </Link>
