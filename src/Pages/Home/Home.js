@@ -13,6 +13,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import useTitle from '../../Hooks/useTitle';
 import Activity from '../../Shared/Activity/Activity';
+import Join from '../../Shared/Join/Join';
 
 
 
@@ -237,7 +238,9 @@ const Home = () => {
 
 
 
+
     </div>
+    <Join/>
 {/* ============ End of main section ========== */}
     </div>
 
