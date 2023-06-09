@@ -3,6 +3,7 @@ import './Join.css';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Company from '../Company/Company';
+import Testimonial from '../Testimonial/Testimonial';
 
 const Join = () => {
     return (
@@ -31,6 +32,9 @@ const Join = () => {
         </div>
         
           </div>
+
+          {/* =========== Testimonial ========== */}
+          <Testimonial/>
 
           {/* ============ Company Section ========== */}
 

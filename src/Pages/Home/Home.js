@@ -24,7 +24,7 @@ const Home = () => {
   const [services, setServices] = useState([]);
 
   useTitle('Home')
-
+  
   useEffect(() => {
     fetch('https://health-coach-server-self.vercel.app/services')
       .then(res => res.json())
@@ -245,7 +245,7 @@ const Home = () => {
     {/* ========= Join US + Company ========= */}
     <Join/>
 
-  
+          
  
 {/* ============ End of main section ========== */}
     </div>

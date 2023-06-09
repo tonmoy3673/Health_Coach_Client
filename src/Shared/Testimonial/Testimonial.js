@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
+import AllTestimonial from './AllTestimonial';
 
 const Testimonial = () => {
 
@@ -34,14 +35,17 @@ const Testimonial = () => {
                 id:4
             },
            
-
+                
         ]
     return (
-        <div className='container'>
+        <div className='container py-4'>
 
-            <div>
-            <Row  xs={1} md={3} lg={3}>
-
+            <div className='py-3'>
+            <Row  xs={1} md={3} >
+                    {
+                        testimonial.map(test=><AllTestimonial
+                        key={test.id} test={test}/>)
+                    }
                 </Row>
             </div>
         </div>
